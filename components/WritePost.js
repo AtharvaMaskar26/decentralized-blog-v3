@@ -14,7 +14,7 @@ import {
 import { useLensContext } from "../context/LensContext";
 import toast from "react-hot-toast";
 import { useMoralis, useWeb3Contract } from "react-moralis";
-import lensAbi from "./lensAbi.json";
+import lensAbi from "./lensABI.json";
 import { useNotification } from "@web3uikit/core";
 import { encode } from "js-base64";
 
