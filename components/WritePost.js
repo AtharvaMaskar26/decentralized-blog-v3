@@ -125,16 +125,17 @@ function PostForm({ preview }) {
   };
 
   return (
-    <form onSubmit={handleSubmit(publishPost)} className="p-10">
+    <form onSubmit={handleSubmit(publishPost)} className="p-10 bg-[#03001C]">
       {preview && (
-        <div className="markdown">
+        <div className="markdown bg-white rounded-xl px-4 py-2">
+          <h1 class>Preview</h1>
           <ReactMarkdown>{watch("content")}</ReactMarkdown>
         </div>
       )}
 
       <div className={preview ? "invisible" : "flex flex-col w-full "}>
         <input
-          className="mb-2 border border-gray-300 "
+          className="mb-2 border py-2 px-4 rounded-xl"
           placeholder="Post Title"
           name="contentName"
           {...register("contentName", {
@@ -145,7 +146,7 @@ function PostForm({ preview }) {
         />
 
         <textarea
-          className="h-96 mb-2 "
+          className="h-96 mb-2 py-2 px-4 rounded-xl"
           placeholder="Write your article here!"
           name="content"
           {...register("content", {
@@ -155,7 +156,7 @@ function PostForm({ preview }) {
           })}
         />
         <input
-          className="mb-2 border border-gray-300 "
+          className="mb-2 py-2 px-4 rounded-xl"
           placeholder="(optional) Image URI"
           name="imageURI"
           {...register("imageURI", {
@@ -165,7 +166,7 @@ function PostForm({ preview }) {
           })}
         />
         <input
-          className="mb-2 border border-gray-300 "
+          className="mb-2 py-2 px-4 rounded-xl"
           placeholder="(optional) image/svg+xml,image/gif,image/jpeg,image/png,image/tiff..."
           name="imageType"
           {...register("imageType", {
@@ -175,7 +176,7 @@ function PostForm({ preview }) {
           })}
         />
         <input
-          className="mb-2 border border-gray-300 "
+          className="mb-2 py-2 px-4 rounded-xl"
           placeholder="(optional) Pinata API Key"
           name="pinataApiKey"
           {...register("pinataApiKey", {
@@ -185,7 +186,7 @@ function PostForm({ preview }) {
           })}
         />
         <input
-          className="mb-2 border border-gray-300 "
+          className="mb-2 py-2 px-4 rounded-xl"
           placeholder="(optional) Pinata API Secret"
           name="pinataApiSecret"
           {...register("pinataApiSecret", {
@@ -208,16 +209,15 @@ function PostForm({ preview }) {
             Publish
           </button>
         ) : (
-          <div>
-            You need a lens profile to submit!{" "}
+          <div className="mt-4 flex">
+            <h1 className="font-bold text-md text-white">You need a lens profile to submit!{" "}</h1>
             <a
               href="https://claim.lens.xyz/"
-              className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+              className="bg-white px-4 py-2 ml-4 font-bold text-[#5B8FB9] rounded-xl hover:bg-[#B6EADA]"
             >
               Claim here!
             </a>
             <br />
-            (Or you need to sign in)
           </div>
         )}
       </div>
@@ -229,18 +229,18 @@ export default function WritePost() {
   const [preview, setPreview] = useState(false);
 
   return (
-    <main className="flex flex-row w-full">
+    <main className="flex flex-row w-full bg-[#03001C]">
       <section className="flex flex-col w-3/4 h-60">
-        <h1 className="mt-40 text-center text-xl font-black">
+        <h1 className="mt-40 text-center text-3xl font-bold text-white">
           Write Your Post Here!
         </h1>
         <PostForm preview={preview} />
       </section>
 
       <aside className="flex flex-col w-1/4 mt-28 p-6">
-        <h3 className="text-xl font-bold text-center">Tools</h3>
+        <h3 className="text-xl font-bold text-center text-white pb-4">Tools</h3>
         <button
-          className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+          className="bg-white rounded-xl py-2 px-4 font-bold hover:bg-[#B6EADA]"
           onClick={() => setPreview(!preview)}
         >
           {preview ? "Edit" : "Preview"}
