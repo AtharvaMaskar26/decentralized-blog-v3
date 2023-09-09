@@ -45,19 +45,16 @@ export default function Home(props) {
   }, [account]);
 
   return (
-    <main className="pt-24">
+    <main className="pt-24 bg-[#03001C]">
       <Metatags
         title="Home Page"
         description="Get the latest publications on our site"
       />
-      <div className="pl-2 pr-2">
-        <div className="p-2 m1 bg-sky-600 border text-white rounded  border-solid border-black">
-          <p>Our decentralized blogging platform!</p>
-        </div>
-      </div>
 
       {!profileId ? (
-        <div>You aren't following anyone yet! Here is Patrick :)</div>
+        <div>
+          <h1 className="text-md text-white pl-4">You aren&apos;t following anyone yet! Here is Atharva</h1>
+        </div>
       ) : (
         <div></div>
       )}
