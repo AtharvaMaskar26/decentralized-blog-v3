@@ -8,7 +8,7 @@ export default function Navbar() {
   const { account } = useMoralis();
 
   return (
-    <nav className="pt-5 pb-5 pr-10 pl-10 h-70 w-full bg-white fixed top-0 p-0 font-bold border-b-2 border-solid border-slate-700 bg-[#03001C]  z-99">
+    <nav className="pt-5 pb-5 pr-10 pl-10 h-70 w-full fixed top-0 p-0 font-bold border-b-2 border-solid border-slate-700 bg-[#03001C]  z-99">
       <ul className="list-none m-0 p-0 flex items-center justify-between h-full">
         <li className="rounded">
           <Link href="/">
