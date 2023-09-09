@@ -1,5 +1,5 @@
 import { ethers } from "ethers";
-import lensAbi from "../lensAbi.json";
+import lensAbi from "../lensABI.json";
 
 export const networkConfig = {
   137: {
